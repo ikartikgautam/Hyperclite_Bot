@@ -1,4 +1,0 @@
-token = "1377555943:AAFDNYAxRCzsplO3JMJsoLkrc7ZMUDWW41o"
-chat = "-g406754110"
-
-http://api.telegram.org/bot$TOKEN/sendMessage?chat_id=id&text=Hello+World
