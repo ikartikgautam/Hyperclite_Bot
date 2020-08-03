@@ -15,12 +15,12 @@ one = "http://api.telegram.org/bot"
 two = "/sendMessage?chat_id="
 three = "&text="
 
-getUpdates = "https://api.telegram.org/bot"+token+"/getUpdates"
+getUpdates = "https://api.telegram.org/bot"+get_token()+"/getUpdates"
 offset = "?offset="
 time = "&timeout="
 
 # Final URL
-apiUrl = one+token+two+chat+three
+apiUrl = one+get_token()+two+chat+three
 getUpdates = one+get_token()+"/getUpdates"
 
 # Functions
@@ -44,7 +44,7 @@ def getdataPool(id,sec):
     return json.loads(res)
 
 def sendMsg(msg,cId):
-    res = requests.get(one+token+"/sendMessage?text="+msg+"&chat_id="+cId)
+    res = requests.get(one+get_token()+"/sendMessage?text="+msg+"&chat_id="+cId)
     print(res)
 
 def checkMsg(msg):
@@ -73,12 +73,12 @@ def searchStr(lst,key):
 #     if res['result'][0]['message']['text']=='/send':
 #         sendMessage("test")
 
-startId = 701287715
+startId = 701287720
 while True:
     get_token()
     startId = startId+1
     res = getdataPool(str(startId),"50")
-    print(res)
+    # print(res)
     if res['ok']==False:
         print("Error")
         print(res)
